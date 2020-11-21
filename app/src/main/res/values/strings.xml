@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Argedik_Yemek</string>
+    <string name="title_activity_menues">menues</string>
+    <string name="title_home">Ana Menü</string>
+    <string name="title_dashboard">Listeler</string>
+    <string name="title_notifications">Notlar</string>
+    <string name="hesap_degis">Hesap değiştir</string>
+    <string name="deneme">yani acayip iş</string>
+</resources>

@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "224328381480",
+    "firebase_url": "https://argedik-fb458.firebaseio.com",
+    "project_id": "argedik-fb458",
+    "storage_bucket": "argedik-fb458.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224328381480:android:70e9975763ecec6926b11d",
+        "android_client_info": {
+          "package_name": "com.example.argedik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224328381480-d19agrdqj63qu2o93vc4ioap9dikv6t1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjRXshoJNIrdnejHKP9IxVq9CYIfNCsPE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "224328381480-d19agrdqj63qu2o93vc4ioap9dikv6t1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224328381480:android:028b6838233cb0fe26b11d",
+        "android_client_info": {
+          "package_name": "com.example.argedik_yemek"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224328381480-d19agrdqj63qu2o93vc4ioap9dikv6t1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjRXshoJNIrdnejHKP9IxVq9CYIfNCsPE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "224328381480-d19agrdqj63qu2o93vc4ioap9dikv6t1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
