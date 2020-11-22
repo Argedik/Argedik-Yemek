@@ -2,9 +2,10 @@ package com.example.argedik_yemek.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Besin(
+data class Yemek(
     @SerializedName("isim")
-    val besin : Besin
+    val besin : String?,
+
 ){
 
 }
