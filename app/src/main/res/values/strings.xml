@@ -6,4 +6,6 @@
     <string name="title_notifications">Notlar</string>
     <string name="hesap_degis">Hesap değiştir</string>
     <string name="deneme">yani acayip iş</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
