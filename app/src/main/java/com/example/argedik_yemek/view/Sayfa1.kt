@@ -7,11 +7,13 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.argedik_yemek.R
 import com.example.argedik_yemek.adapter.RecyclerAdapter
 import com.example.argedik_yemek.model.Post
+import com.example.argedik_yemek.viewmodel.Sayfa1ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -22,6 +24,9 @@ class Sayfa1:AppCompatActivity() {
     private lateinit var database: FirebaseFirestore
     private lateinit var recyclerViewAdapter : RecyclerAdapter
 
+    private lateinit var viewModel:Sayfa1ViewModel
+    private val recyclerYemekAdapter = RecyclerAdapter(arrayListOf())
+
     var postListesi=ArrayList<Post>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +34,7 @@ class Sayfa1:AppCompatActivity() {
 
         auth= FirebaseAuth.getInstance()
         database = FirebaseFirestore.getInstance()
+
 
         verileriAl()
 
@@ -75,7 +81,8 @@ class Sayfa1:AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.hesapdegis){
             auth.signOut()
-            val intent= Intent(this, Giris_Sayfasi::class.java)
+            //val intent= Intent(this, Giris_Sayfasi::class.java)
+            val intent= Intent(this, YemekDetayiFragment::class.java)
             startActivity(intent)
             finish()
 
