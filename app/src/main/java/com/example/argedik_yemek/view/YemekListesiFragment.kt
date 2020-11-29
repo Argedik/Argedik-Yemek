@@ -42,8 +42,19 @@ class YemekListesiFragment : Fragment() {
         }*/
         viewModel1 = ViewModelProviders.of(this).get(Sayfa1ViewModel::class.java)
         viewModel1.refreshData()
+
         yemekListesiRecycler.layoutManager=LinearLayoutManager(context)
         yemekListesiRecycler.adapter=recyclerYemekAdapter
+
+        swipeRefreshLayout.setOnRefreshListener {
+            yemekYukleniyor.visibility=View.VISIBLE
+            yemekHataMesaji.visibility=View.GONE
+            yemekListesiRecycler.visibility=View.GONE
+            viewModel1.refreshFromInternet()
+            //viewModel1.refreshData()
+            swipeRefreshLayout.isRefreshing=false
+        }
+
         observeLiveData()
     }
 
