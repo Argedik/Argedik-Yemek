@@ -45,7 +45,7 @@ class Sayfa1ViewModel(application: Application) :BaseViewModel(application){
     private fun sqliteDenAl(){
         yemekYukleniyor.value=true
         launch {
-            val yemekListesi = YemekDataBase(getApplication()).yemekDao().getAllYemek()
+            val yemekListesi = YemekDataBase.getInstance(getApplication()).yemekDao().getAllYemek()
             yemekleriGoster(yemekListesi)
             Toast.makeText(getApplication(),"Yemek Listesi internetsiz alındı",Toast.LENGTH_LONG).show()
         }
@@ -92,9 +92,9 @@ class Sayfa1ViewModel(application: Application) :BaseViewModel(application){
 
     private fun sqliteSakla(yemekListesi:List<Yemek>){
         launch {
-            val dao = YemekDataBase(getApplication()).yemekDao()
+            val dao = YemekDataBase.getInstance(getApplication()).yemekDao()// sen düzelt
             dao.deleteAllYemek()
-
+//deniyor muyuz
             //verileri tektek almak için: *yemekListesi.toTypedArray()
             //uygulama içindeki idlere ulaşmak için uuid Listesi
             val uuidListesi = dao.insertAll(*yemekListesi.toTypedArray())
