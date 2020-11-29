@@ -1,0 +1,70 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "1572e474799f416a2afc62e664d0200d",
+    "entities": [
+      {
+        "tableName": "Yemek",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `aisim` TEXT, `adeneme` TEXT, `bsos` TEXT, `amalzeme` TEXT, `gorsel` TEXT, `Tarif` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "uuid",
+            "columnName": "uuid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aisim",
+            "columnName": "aisim",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "adeneme",
+            "columnName": "adeneme",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bsos",
+            "columnName": "bsos",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "amalzeme",
+            "columnName": "amalzeme",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "gorsel",
+            "columnName": "gorsel",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Tarif",
+            "columnName": "Tarif",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "uuid"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1572e474799f416a2afc62e664d0200d')"
+    ]
+  }
+}
