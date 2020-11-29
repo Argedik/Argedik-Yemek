@@ -48,7 +48,7 @@
                 android:layout_margin="7dp"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:text="@{secilenYemek.amalzeme}"
+                android:text="@{secilenYemek.bsos}"
                 android:layout_below="@+id/ilkmetin"
                 >
             </TextView>
