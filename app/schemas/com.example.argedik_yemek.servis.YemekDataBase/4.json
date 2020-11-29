@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 4,
-    "identityHash": "1572e474799f416a2afc62e664d0200d",
+    "identityHash": "6e88a0e0e31b8a997971bc02f94c2c3b",
     "entities": [
       {
         "tableName": "Yemek",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `aisim` TEXT, `adeneme` TEXT, `bsos` TEXT, `amalzeme` TEXT, `gorsel` TEXT, `Tarif` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `aisim` TEXT, `bsos` TEXT, `amalzeme` TEXT, `gorsel` TEXT, `Tarif` TEXT)",
         "fields": [
           {
             "fieldPath": "uuid",
@@ -17,12 +17,6 @@
           {
             "fieldPath": "aisim",
             "columnName": "aisim",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "adeneme",
-            "columnName": "adeneme",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -64,7 +58,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1572e474799f416a2afc62e664d0200d')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6e88a0e0e31b8a997971bc02f94c2c3b')"
     ]
   }
 }
