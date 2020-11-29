@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.argedik_yemek.model.Yemek
 
 //Database ile ilgili bir değişiklik yaptığımızda versiyonu değiştirmemiz gerekiyor
-@Database(entities = arrayOf(Yemek::class),version=2)
+@Database(entities = arrayOf(Yemek::class),version=3)
 abstract class YemekDataBase : RoomDatabase() {
     abstract fun yemekDao():YemekDAO
 
