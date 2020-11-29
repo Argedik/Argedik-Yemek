@@ -4,80 +4,92 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-    <RelativeLayout
+<data>
+    <variable
+        name="secilenYemek"
+        type="com.example.argedik_yemek.model.Yemek" />
+</data>
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.YemekDetayiFragment">
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".view.YemekDetayiFragment">
 
-        <Button
-            android:id="@+id/yemek_detayi_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Yemek Listesine Git"
-            android:layout_alignParentTop="true"
-            android:minHeight="200dp"
-            android:layout_margin="10dp">
-        </Button>
-        <TextView
-            android:id="@+id/ilkmetin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="7dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="İlk metin"
-            android:layout_below="@+id/yemek_detayi_button"
-            >
-        </TextView>
-        <TextView
-            android:id="@+id/ikincimetin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="7dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="İlk metin"
-            android:layout_below="@+id/ilkmetin"
-            >
-        </TextView>
-        <TextView
-            android:id="@+id/ucuncumetin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="7dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="İlk metin"
-            android:layout_below="@+id/ikincimetin"
-            >
-        </TextView>
-        <TextView
-            android:id="@+id/dorduncumetin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="7dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="İlk metin"
-            android:layout_below="@+id/ucuncumetin"
-            >
-        </TextView>
-        <TextView
-            android:id="@+id/besincimetin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="7dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="İlk metin"
-            android:layout_below="@+id/dorduncumetin"
-            >
-        </TextView>
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/liste_Detay_Resmi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="200dp"
+                android:layout_margin="10dp"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitCenter"
+                android:downloadImage="@{secilenYemek.gorsel}" />
+
+            <TextView
+                android:id="@+id/ilkmetin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="7dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="@{secilenYemek.amalzeme}"
+                android:layout_below="@+id/liste_Detay_Resmi"
+                >
+            </TextView>
+            <TextView
+                android:id="@+id/ikincimetin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="7dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="@{secilenYemek.amalzeme}"
+                android:layout_below="@+id/ilkmetin"
+                >
+            </TextView>
+            <TextView
+                android:id="@+id/ucuncumetin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="7dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="@{secilenYemek.aisim}"
+                android:layout_below="@+id/ikincimetin"
+                >
+            </TextView>
+            <TextView
+                android:id="@+id/dorduncumetin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="7dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="@{secilenYemek.amalzeme}"
+                android:layout_below="@+id/ucuncumetin"
+                >
+            </TextView>
+            <TextView
+                android:id="@+id/besincimetin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="7dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="@{secilenYemek.tarif}"
+                android:layout_below="@+id/dorduncumetin"
+                android:paddingBottom="50dp"
+                >
+            </TextView>
+
+        </RelativeLayout>
+    </ScrollView>
 </layout>
