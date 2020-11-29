@@ -1,5 +1,6 @@
 package com.example.argedik_yemek.servis
 
+import android.content.Context
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -19,4 +20,6 @@ interface YemekDAO {
 
     @Query("DELETE FROM yemek")
     suspend fun deleteAllYemek()
+
+
 }
