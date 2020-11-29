@@ -12,13 +12,15 @@ data class Yemek(
     @ColumnInfo(name="aisim")
     @SerializedName("aisim")
     val aisim : String?,
+    @ColumnInfo(name="adeneme")
+    @SerializedName("adeneme")
+    val adeneme : String?,
     @ColumnInfo(name="bsos")
     @SerializedName("bsos")
     val bsos : String?,
     @ColumnInfo(name="amalzeme")
     @SerializedName("amalzeme")
     val amalzeme : String?,
-
     @ColumnInfo(name="gorsel")
     @SerializedName("gorsel")
     val gorsel : String?,
