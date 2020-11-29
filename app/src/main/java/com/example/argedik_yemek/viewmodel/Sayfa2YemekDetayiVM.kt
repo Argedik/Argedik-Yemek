@@ -13,8 +13,8 @@ class Sayfa2YemekDetayiVM(application: Application) : BaseViewModel(application)
 
     fun roomVerisiniAl(uuid : Int){
         launch {
-            val dao = YemekDataBase(getApplication()).yemekDao()
-            val yemek = dao.getYemek(uuid)
+            val dao = YemekDataBase.getInstance(getApplication())?.yemekDao()
+            val yemek = dao?.getYemek(uuid)
             yemekLiveData.value = yemek
         }
     }
