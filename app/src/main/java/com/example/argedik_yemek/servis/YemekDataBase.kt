@@ -1,6 +1,7 @@
 package com.example.argedik_yemek.servis
 
 import android.content.Context
+import android.util.Log
 import androidx.annotation.VisibleForTesting
 import androidx.room.Database
 import androidx.room.Room
@@ -8,44 +9,51 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.argedik_yemek.model.Yemek
+import com.example.argedik_yemek.servis.YemekDataBase.Companion.DB_VERSION
 
-@Database(entities = arrayOf(Yemek::class),version=4)
+@Database(entities = arrayOf(Yemek::class), version = DB_VERSION)
 abstract class YemekDataBase : RoomDatabase() {
-    abstract fun yemekDao():YemekDAO
+    abstract fun yemekDao(): YemekDAO
 
-    companion object{
-        @Volatile private var instance: YemekDataBase? = null
-        private val lock =Any()
+    // Şu haliyle 1. versiyonla kurması lazım uygulamayı silip tekrar kuralım
+    companion object {
+        const val DB_VERSION = 2
+        const val DB_NAME = "yemekdatabase"
 
-        operator fun invoke(context:Context) = instance?: synchronized(lock){
-            instance?: databaseOlustur(context).also {
-                instance = it
+        @Volatile
+        private var instance: YemekDataBase? = null
+
+        @Synchronized
+        fun getInstance(context: Context): YemekDataBase {
+
+            if (instance == null) {
+                instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    YemekDataBase::class.java,
+                    DB_NAME
+                )
+                    .addMigrations(MIGRATION_1_TO_2)
+                    .build()
+
+
             }
+
+
+
+            return instance as YemekDataBase
         }
 
-        private fun databaseOlustur(context: Context) =Room.databaseBuilder(
-            context.applicationContext,
-            YemekDataBase::class.java,"yemekdatabase").build()
-
-        @JvmField
-        @VisibleForTesting
-        val MIGRATION_3_4: Migration = object : Migration(3, 4) {
-            override fun migrate(database: SupportSQLiteDatabase) {
-                //database.execSQL("Yemek bsos")
+        private val MIGRATION_1_TO_2 = object : Migration(1, 2) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE Yemek ADD COLUMN adeneme TEXT")
             }
+
         }
 
-        @JvmStatic
-        fun getInstance(context: Context): YemekDataBase? {
-            synchronized(lock) {
-                if (instance == null) {
-                    instance = Room.databaseBuilder(context.applicationContext,
-                        YemekDataBase::class.java, "yemekdatabase")
-                        .addMigrations(MIGRATION_3_4)
-                        .build()
-                }
-                return instance
-            }
+        fun destroyInstance() {
+            instance = null
         }
     }
+
+
 }
