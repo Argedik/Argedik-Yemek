@@ -86,7 +86,6 @@
                 android:textStyle="bold"
                 android:text="@{secilenYemek.tarif}"
                 android:layout_below="@+id/dorduncumetin"
-                android:paddingBottom="50dp"
                 >
             </TextView>
 
