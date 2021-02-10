@@ -31,7 +31,5 @@ class RecyclerAdapter(val postList:ArrayList<Post>) : RecyclerView.Adapter<Recyc
     override fun getItemCount(): Int {
         return postList.size
     }
-
-
 }
 
